@@ -1,0 +1,26 @@
+{
+  "name": "amt-cypress-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirasanthan-jesugeevegan/amt-cypress-cucumber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pirasanthan-jesugeevegan/amt-cypress-cucumber/issues"
+  },
+  "homepage": "https://github.com/pirasanthan-jesugeevegan/amt-cypress-cucumber#readme",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^12.1.0",
+    "esbuild": "^0.16.5"
+  }
+}
