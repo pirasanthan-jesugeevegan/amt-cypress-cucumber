@@ -12,6 +12,8 @@ docker build \
 
 docker push -q ${UI_RUNNER_DOCKER_IMAGE_REV}
 
+echo $UI_RUNNER_DOCKER_IMAGE_REV
+echo $UI_RUNNER_DOCKER_IMAGE_CACHE
 if [ "##[set-output name=branch;]${GITHUB_REF#refs/heads/}" == "master" ]
 then
     docker tag ${UI_RUNNER_DOCKER_IMAGE_REV} ${UI_RUNNER_DOCKER_IMAGE_CACHE}
