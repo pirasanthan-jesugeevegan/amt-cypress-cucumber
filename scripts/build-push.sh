@@ -15,6 +15,11 @@ docker push -q ${UI_RUNNER_DOCKER_IMAGE_REV}
 
 if [ "##[set-output name=branch;]${GITHUB_REF#refs/heads/}" == "master" ]
 then
-    docker tag ${UI_RUNNER_DOCKER_IMAGE_REV} ${UI_RUNNER_DOCKER_IMAGE_CACHE}
+
+    echo 'Setting docker tag...'
+    docker tag ${UI_RUNNER_DOCKER_IMAGE_REV}
+    docker tag ${UI_RUNNER_DOCKER_IMAGE_CACHE}
+    echo 'Pushing docker image...'
+    docker push -q ${UI_RUNNER_DOCKER_IMAGE_REV}
     docker push -q ${UI_RUNNER_DOCKER_IMAGE_CACHE}
 fi
