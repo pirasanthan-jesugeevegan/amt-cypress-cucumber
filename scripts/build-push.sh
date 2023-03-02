@@ -12,7 +12,8 @@ docker build \
 
 docker push -q ${UI_RUNNER_DOCKER_IMAGE_REV}
 
-echo $GITHUB_BASE_REF
+echo $GITHUB_HEAD_REF
+echo $GITHUB_REF
 if [ "$GITHUB_BASE_REF" == "master" ]
 then
     docker tag ${UI_RUNNER_DOCKER_IMAGE_REV} ${UI_RUNNER_DOCKER_IMAGE_CACHE}
