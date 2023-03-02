@@ -12,8 +12,9 @@ docker build \
 
 docker push -q ${UI_RUNNER_DOCKER_IMAGE_REV}
 
-
-if [ "##[set-output name=branch;]${GITHUB_REF#refs/heads/}" == "master" ]
+echo $GITHUB_REF
+echo $GITHUB_HEAD_REF
+if [ "$GITHUB_HEAD_REF" == "master" ]
 then
 
     echo 'Setting docker tag...'
