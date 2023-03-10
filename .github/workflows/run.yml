@@ -4,7 +4,7 @@ on:
     types: [run-cypress]
 jobs:
   Cypress:
-    name: Build Docker Image
+    name: Pull Docker Image and Run test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,4 +28,4 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker run --rm $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG npm run cypress:run
+          docker run --rm $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG npm run ${{ github.event.client_payload.command }}
