@@ -1,8 +1,7 @@
 name: Run Cypress Test
 on:
-  push:
-    branches: ['master']
-
+  repository_dispatch:
+    types: [run-cypress]
 jobs:
   Cypress:
     name: Build Docker Image
