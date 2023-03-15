@@ -4,7 +4,7 @@ RUN mkdir /web-ui-amt
 
 WORKDIR /web-ui-amt
 
-COPY package.json package-lock.json .
+COPY package*.json ./
 
 RUN npm install
 
